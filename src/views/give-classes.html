@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proffy | Your new online study platform</title>
+    <link rel="stylesheet" href="./resources/style.css" />
+    <link rel="stylesheet" href="./resources/partials/header.css" />
+    <link rel="stylesheet" href="./resources/partials/form.css" />
+    <link rel="stylesheet" href="./resources/partials/page-give-classes.css" />
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="scripts/addField.js" defer></script>
+  </head>
+  <body id="page-give-classes">
+    <div id="container">
+      <header class="page-header">
+        <div class="top-bar-container">
+          <a href="/"> <img src="./images/icons/back.svg" alt="back" /></a>
+          <img src="./images/logo.svg" alt="Proffy" />
+        </div>
+        <div class="header-content">
+          <strong>Its really great that you want to teach!</strong>
+          <p>The first step is to register with us</p>
+        </div>
+      </header>
+      <main>
+        <form action="" id="create-class">
+          <fieldset>
+            <legend>Your info</legend>
+            <div class="input-block">
+              <label for="name">Full name</label>
+              <input type="name" id="name" required />
+            </div>
+            <div class="input-block">
+              <label for="avatar"
+                >Profile picture<small>(start with https://)</small></label
+              >
+              <input name="avatar" id="avatar" type="url" required />
+            </div>
+            <div class="input-block">
+              <label for="whatsapp"
+                >Whatsapp <small>(only your number)</small></label
+              >
+              <input type="number" name="whatsapp" id="whatsapp" required />
+            </div>
+            <div class="textarea-block">
+              <label for="bio">About you</label>
+              <textarea
+                name="bio"
+                id="bio"
+                required
+                placeholder="Your biography here"
+              ></textarea>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>About the class</legend>
+            <div class="select-block">
+              <label for="subject">Subject</label>
+              <select name="subject" id="subject" required>
+                {%for subject in subjects %}
+                <option value="{{loop.index}}">{{subject}}</option>
+                {%endfor%}
+              </select>
+            </div>
+            <div class="input-block">
+              <label for="cost">Your hourly rate</label>
+              <input name="cost" type="cost" id="cost" type="number" required />
+            </div>
+          </fieldset>
+          <fieldset id="schedule-items">
+            <legend>
+              Availability
+              <button type="button" id="add-time">+ Add more</button>
+            </legend>
+            <div class="schedule-item">
+              <div class="select-block">
+                <label for="weekday">Week day</label>
+                <select name="weekday[]" required>
+                  {%for weekday in weekdays %}
+                  <option value="{{loop.index0}}">{{weekday}}</option>
+                  {%endfor%}
+                </select>
+              </div>
+              <div class="input-block">
+                <label for="time_from">From</label>
+                <input type="time" name="time_from[]" required />
+              </div>
+              <div class="input-block">
+                <label for="time_to">Until</label>
+                <input type="time" name="time_to[]" required />
+              </div>
+            </div>
+          </fieldset>
+        </form>
+        <footer>
+          <p>
+            <img src="./images/icons/warning.svg" alt="warning" /> Important!
+            <br />
+            You must fill all the fields.
+          </p>
+          <button type="submit" form="create-class">Save</button>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
