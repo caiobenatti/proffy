@@ -57,6 +57,11 @@
         </div>
       </header>
       <main>
+        {% if proffys == ""%}
+        <p class="no-results">Can't find any teachers with your search parameters</p>
+
+        {% else %}
+
         {%for proffy in proffys%}
         <article class="teacher-item">
           <header>
@@ -70,7 +75,7 @@
           <p>{{proffy.bio}}</p>
 
           <footer>
-            <p>Preço/hora<strong>£ {{proffy.cost}}</strong></p>
+            <p>Hourly cost<strong>£ {{proffy.cost}}</strong></p>
             <a
               href="https://api.whatsapp.com/send?l=pt_BR&phone55{{proffy.whatsapp}}&text=Im interrested in taking classes in {{proffy.subject}} , {{proffy.name}}"
               class="button"
@@ -82,6 +87,8 @@
           </footer>
         </article>
         {%endfor%}
+        {% endif %}  
+        
       </main>
     </div>
   </body>
