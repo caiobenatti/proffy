@@ -11,7 +11,6 @@ Proffy is an online educational platform that allows student-teacher interaction
 ### Stacks used:
 
 - [Node.js](https://nodejs.org/en/) ;
-- [ReactJS](https://pt-br.reactjs.org/) ;
 - [SQLite](https://www.sqlite.org/index.html) ;
 - SQL ;
 - Template Engine : Nunjucks.
