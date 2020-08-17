@@ -14,3 +14,11 @@ Proffy is an online educational platform that allows student-teacher interaction
 - [SQLite](https://www.sqlite.org/index.html) ;
 - SQL ;
 - Template Engine : Nunjucks.
+
+### Available Scripts
+In the project directory, you can run:
+
+# npm run dev
+
+Runs the app in the development mode.
+Open http://localhost:5500 to view it in the browser.
